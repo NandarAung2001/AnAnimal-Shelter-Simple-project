@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b8a58bc95c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+</head>
+<body>
+    <header class="header" id="navigation-menu">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="https://i.pinimg.com/564x/0d/09/64/0d0964fc4f8ad4650c58013ef310301e.jpg" alt="logo image">
+                </a>
+                <ul class="nav-menu">
+                    <li> <a href="#home" class="nav-list">Donations</a> </li>
+                    <li> <a href="#destinations" class="nav-list">Animalshelter</a> </li>
+                    <li> <a href="#offers" class="nav-list">Orphange</a> </li>
+                    <li> <a href="#travel-experience" class="nav-list">Charity</a> </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="location-ask">
+        <span class="where-to">Where to?</span> <span class="required">(Required) </span> <br />
+    <div class="booking">
+
+            <label class="location-label"></label>
+            <input type="text" class="location" placeholder="City, state, location, or Date" required>
+
+            <button type="submit" class="btn date" onclick="dateOpenPopup()">Date</button>
+            <div class="date-popup" id="date-popup">
+                <h2>Select Date</h2>
+                <input type="text" id="datepicker">
+                <button type="button" onclick="dateClosePopup()">OK</button>
+            </div>
+
+            <button type="submit" class="btn room" onclick="roomOpenPopup()">Location and Donator</button>
+            <div class="room-popup" id="room-popup">
+                <h2>Rooms and Guests</h2>
+                <div class="container-room">
+                <form>
+                    <label for="rooms">Rooms:</label>
+                    <input type="number" id="rooms" value=1><br><br>
+                    <label for="adults">Adults:</label>
+                    <input type="number" id="adults" value=1><br><br>
+                    <label for="kids">Kids:</label>
+                    <input type="number" id="kids" value=0><br><br>
+                </form>
+                <button type="button" onclick="roomClosePopup()">OK</button>
+
+            </div>
+            </div>
+            <button type="submit" class="btn special-rates" onclick="ratesOpenPopup()">Special Rates</button>
+            <div class="rates-popup" id="rates-popup">
+                <h2>Special Rates</h2>
+                <form class="special-rates-checkbox">
+                    <label class="special-rates-checkbox">Use Points
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Travel Agents
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">AAA Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">AARP Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Senior Rate
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="special-rates-checkbox">Government / Military Rates
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+
+                </form>
+                    <form class="special-rates-text">
+
+                        <label for="promotion-code">Promotion Code</label><br>
+                        <input type="text" id="promotion-code"><br><br>
+                        <label for="group-code">Group Code</label><br>
+                        <input type="text" id="group-code"><br><br>
+                        <label for="corporate-account">Corporate Account</label><br>
+                        <input type="text" id="corporate-account"><br><br>
+
+                    </form>
+
+
+                <button type="button" onclick="ratesClosePopup()">OK</button>
+            </div>
+
+            <button type="submit" class="btn find-Donation Shelter">Find Donation Shelter</button>
+
+    </div>
+
+    <div class="hotel-front-container">
+        <img src="https://i.pinimg.com/564x/02/e7/07/02e7072b08889e5a18d66e0de678ac1c.jpg" alt="picture of the front of the hotel" class="hotel-front">
+       </div>
+
+       <div class="welcome-text">
+        <h2>Beautiful Brazil</h2>
+        <p>Nestled amidst the lush tropical beauty of Brazil, this hotel offers a perfect blend of luxury, comfort, and the enchanting allure of the country's vibrant culture.</p>
+        <button class="btn">Explore More</button>
+       </div>
+
+       <div class="subheading">
+        <h2>Exhilarating Destinations</h2>
+        <p>Here is a journey through some of the most wonderful places on Earth.</p>
+       </div>
+
+       <div class="destinations-images">
+
+        <div class="country" id="italy-div">
+            <img src="https://i.pinimg.com/564x/7a/de/1b/7ade1b03a411263fbb9d7a93378127bf.jpg" alt="Animalshelter" >
+            <div class="country-text" id="italy-text">Animalshelter</div>
+        </div>
+        <div class="country" id="portugal-div">
+            <img src="https://i.pinimg.com/564x/67/7a/ee/677aeed76b36b9decff8fe24af078951.jpg" alt="Orphange" >
+            <div class="country-text" id="portugal-text">Orphange</div>
+        </div>
+        <div class="country" id="japan-div">
+            <img src="https://i.pinimg.com/564x/6c/b0/7b/6cb07bcd623ef5d5ab5a4320bbafbe57.jpg" alt="Charity" >
+            <div class="country-text" id="japan-text">Charity</div>
+        </div>
+      
+       </div>
+
+       <div class="subheading">
+        <h2>Experience Something New</h2>
+        <p>The unknown beckons us, and our imaginations run wild with possibilities</p>
+       </div>
+
+       <div class="experience-images">
+        <div class="experience" id="discount-div">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPYZpJQ0manunUbb_IhdtJXmElQJ7fMITX_aWq5=w426-h240-k-no" alt="Pearl Heart Animal Shelter" >
+            <div class="experience-text" id="discount-text">Pearl Heart Animalshelter</div>
+        </div>
+        <div class="experience" id="points-div">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPGGq0MIcnLhUOHby24wI4ilIAt-MjZNJDjAKDX=w408-h306-k-no" alt="Yangon Animalshelter" >
+            <div class="experience-text" id="points-text">Yangon Animalshelter</div>
+        </div>
+        <div class="experience" id="parking-div">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPjO465MD0qnmPRcRD2S141IusKR6BZWvBLjv_T=w408-h306-k-no" alt="Gold Gold Cat Animalshelter" >
+            <div class="experience-text" id="parking-text">Gold Gold Cat Shelter</div>
+        </div>
+        <div class="experience" id="plan-div">
+            <img src=" https://lh5.googleusercontent.com/p/AF1QipPzRo9Md1Pga5yx_6HkOKt-iN3oCquFDHLPR3-8=w408-h725-k-no" alt="Tiger Cage" >
+            <div class="experience-text" id="plan-text">Tiger Cage</div>
+        </div>
+        <div class="experience" id="first-time-div">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipPjO465MD0qnmPRcRD2S141IusKR6BZWvBLjv_T=w408-h306-k-no" alt="Golden Heart" >
+            <div class="experience-text" id="first-time-text">Golden Heart</div>
+        </div>
+        <div class="experience" id="members-div">
+            <img src="https://lh5.googleusercontent.com/p/AF1QipNmI8rNR81UglGuDoSlEBmX5ltndOwbaFtgGjht=w408-h336-k-no" alt="Better Life" >
+            <div class="experience-text" id="members-text">Better Life</div>
+        </div>
+       </div>
+
+       <div class="different-hotels">
+        <img src="https://i.pinimg.com/564x/99/60/68/9960681df11d36bac0f356d887751f52.jpg" alt="hotel front">
+        <div class="different-hotels-div">
+        <h2>Introduction</h2>
+        <p>Welcome to [JD Web]! We believe in the power of collective action to create positive change. Together, we can [briefly describe your mission and the impact you aim to make]. Today, we invite you to be a part of this journey by making a donation that will directly contribute to [highlight a specific project, initiative, or goal].</p>
+        <button type="submit" class="btn">Join for Free</button>
+
+
+  
+    </div>
+    </div>
+
+    <div class="back-to-top">
+    <button onclick="topFunction()" class="btn"> ⬆ Back to Top</button>
+    </div>
+
+  <hr class="footer-line">
+
+    <div class="footer">
+        <div class="col-1">
+            <div>
+            <h3>How can we help?</h3>
+            <button class="btn">Request a Call</button>
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+
+            </div>
+
+        </div>
+        </div>
+        <div class="col-2">
+            <a href="#">Donate Today</a>
+            <a href="#">Donate now or give monthly</a>
+            <a href="#">Urgent need</a>
+            <a href="#">Planned Giving</a>
+            <a href="#">Other ways to give</a>
+            <a href="#">The care Fund</a>
+            <a href="#">Media</a>
+            <a href="#">Blog</a>
+            <a href="#">Web Accessibility</a>
+            <a href="#">Customer Support</a>
+        </div>
+        <div class="col-3">
+            <a href="#">Where To?</a>
+            <a href="#">Adopt Pet</a>
+            <a href="#">Ways to give</a>
+            <a href="#">Volunteer</a>
+            <a href="#">What's going on</a>
+            <a href="#">Do Not Sell My Personal Information</a>
+            <a href="#">Personal Data Requests</a>
+            <a href="#">About Us</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
